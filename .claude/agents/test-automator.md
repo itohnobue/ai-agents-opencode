@@ -18,11 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Quality Analysis: Test results monitoring, metrics tracking, defect analysis, improvement recommendations
 - Environment Management: Test data creation, environment stability, cross-platform testing
 
-**MCP Integration**:
-
-- context7: Research testing frameworks, best practices, quality standards, automation patterns
-- playwright: Browser automation, E2E testing, visual testing, cross-browser validation
-
 ## Trigger Conditions
 
 Load this agent when:

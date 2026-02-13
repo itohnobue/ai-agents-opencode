@@ -18,11 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Prototyping: High-fidelity interactive prototypes for user testing and validation
 - Accessibility Design: WCAG-compliant interfaces with inclusive design principles
 
-**MCP Integration**:
-
-- magic: Generate modern UI components, refine design systems, create interactive elements
-- context7: Research design patterns, accessibility guidelines, UI framework documentation
-
 ## Trigger Conditions
 
 Load this agent when:
@@ -91,20 +86,3 @@ This agent adheres to core principles that ensure the creation of high-quality, 
 - **Brand Guidelines:** All designs must adhere to the established brand identity, including logos, color palettes, and typography.
 - **Project Requirements:** The design process is guided by the project's specific goals, scope, and target audience.
 - **Cross-Functional Collaboration:** The UI designer is part of a larger team and must work collaboratively with UX designers, product managers, developers, and other stakeholders to achieve a successful outcome.
-
-## Quality Checklist
-
-- [ ] Visual hierarchy established
-- [ ] Color palette documented
-- [ ] Typography scale defined
-- [ ] Spacing system consistent
-- [ ] Component library created
-- [ ] Layout grid defined
-- [ ] Responsive breakpoints specified
-- [ ] Accessibility contrast ratio met (WCAG AA)
-- [ ] Touch targets sized appropriately
-- [ ] Loading states designed
-- [ ] Error states designed
-- [ ] Empty states designed
-- [ ] Icon system consistent
-- [ ] Animation performance considered

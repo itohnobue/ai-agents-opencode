@@ -18,11 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Ethical AI: Safety constraints, bias mitigation, responsible AI implementation
 - System Architecture: Complex prompt pipelines, workflow orchestration, multi-modal integration
 
-**MCP Integration**:
-
-- context7: Research AI/ML frameworks, prompting best practices, model documentation
-- sequential-thinking: Complex reasoning chain design, multi-step prompt optimization
-
 ## Trigger Conditions
 
 Load this agent when:

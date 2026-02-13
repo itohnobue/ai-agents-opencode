@@ -95,13 +95,6 @@ Diagram guidelines:
 - Keep diagrams focused - break complex systems into multiple diagrams
 - Label data flows with what is being passed, not just arrows
 
-## Patterns & Examples
-
-### Documentation Structure Pattern
-
-```markdown
-# [System Name] - Technical Documentation
-
 ## Executive Summary
 
 [One-page overview: purpose, key features, main technologies, scale]
@@ -157,13 +150,6 @@ The [System Name] is a [type of system] built using [main technologies]. It proc
 **Purpose**: What this represents in the domain
 
 **Schema**:
-```sql
-CREATE TABLE example (
-  id UUID PRIMARY KEY,
-  field_name VARCHAR(255) NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW()
-);
-```
 
 **Constraints**: Business rules and validation
 
@@ -263,11 +249,6 @@ CREATE TABLE example (
 ## Appendix B: References
 
 [Links to external documentation, APIs, standards]
-```
-
-### Code Documentation Pattern
-
-```markdown
 ## 4.3.1 OrderProcessingService
 
 **Purpose**: Handles order processing workflow from creation through fulfillment
@@ -281,20 +262,6 @@ CREATE TABLE example (
 - Emit domain events for order lifecycle changes
 
 **Architecture**:
-
-```
-OrderProcessingService
-├── Command Validators
-│   ├── ValidatePlaceOrderCommand
-│   └── ValidateCancelOrderCommand
-├── Orchestrators
-│   ├── InventoryOrchestrator
-│   └── PaymentOrchestrator
-└── Event Emitters
-    ├── OrderCreatedEvent
-    ├── PaymentProcessedEvent
-    └── OrderFulfilledEvent
-```
 
 **Key Methods**:
 
@@ -314,18 +281,6 @@ Processes a new order by:
 
 **Example Usage**:
 
-```typescript
-const service = new OrderProcessingService(inventory, payment, eventBus);
-const command = {
-  customerId: 'cust-123',
-  items: [{ productId: 'prod-456', quantity: 2 }],
-  shippingAddress: address
-};
-
-const result = await service.processOrder(command);
-console.log(`Order ${result.orderId} created with status ${result.status}`);
-```
-
 **Design Decisions**:
 
 **Why async/await pattern?**
@@ -342,9 +297,6 @@ console.log(`Order ${result.orderId} created with status ${result.status}`);
 - Decouples order processing from downstream systems (notification, analytics)
 - Enables audit trail of all order state changes
 - Supports eventual consistency in distributed systems
-```
-
-```markdown
 // BAD: Minimal information, no context
 ## OrderProcessingService
 
@@ -353,50 +305,7 @@ This service handles orders. It's located in src/services.
 Methods:
 - processOrder(): processes orders
 - cancelOrder(): cancels orders
-```
-
-### Diagram Description Pattern
-
-```markdown
 ### 1.2 Architecture Diagram
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        Client Layer                             │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐        │
-│  │  Web UI  │  │  Mobile  │  │  API     │  │  Admin   │        │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘        │
-└───────┼────────────┼────────────┼────────────┼─────────────────┘
-        │            │            │            │
-        └────────────┴────────────┴────────────┘
-                            │
-                    ┌───────▼────────┐
-                    │  API Gateway   │  (Kong)
-                    │  Auth + Rate   │
-                    │   Limiting     │
-                    └───────┬────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-┌───────▼────────┐  ┌───────▼────────┐  ┌───────▼────────┐
-│  Auth Service  │  │  Core Service  │  │  Notif Svc    │
-│  (Node.js)     │  │  (Go)          │  │  (Python)     │
-│  500 rps       │  │  2000 rps      │  │  100 rps      │
-└───────┬────────┘  └───────┬────────┘  └───────┬────────┘
-        │                   │                   │
-        └───────────────────┼───────────────────┘
-                            │
-                    ┌───────▼────────┐
-                    │   PostgreSQL   │
-                    │   Primary DB   │
-                    └────────────────┘
-
-                            │
-                    ┌───────▼────────┐
-                    │   PostgreSQL   │
-                    │   Replica DB  │
-                    └────────────────┘
-```
 
 **Diagram Key**:
 - `UI`: User-facing applications
@@ -412,31 +321,7 @@ Methods:
 4. Service processes request and queries database
 5. Response flows back through gateway to client
 6. Service emits events for notifications and analytics
-```
-
-```markdown
 // BAD: Diagram without context
 ## Architecture
 
 [Box with "API" -> Box with "DB"]
-```
-
-## Quality Checklist
-
-- [ ] Executive summary provides one-page overview for stakeholders
-- [ ] Architecture section includes high-level diagram with component overview
-- [ ] Design decisions section explains the "why" behind key choices
-- [ ] Core components section has detailed descriptions for each major module
-- [ ] Data models section includes schemas, constraints, and relationships
-- [ ] Integration points document external systems, protocols, and error handling
-- [ ] Deployment architecture shows infrastructure, environments, and scaling strategy
-- [ ] Performance characteristics identify bottlenecks, optimizations, and benchmarks
-- [ ] Security model covers authentication, authorization, and data protection
-- [ ] Troubleshooting guide includes common issues and debugging approaches
-- [ ] Development guide covers setup, testing, and contribution process
-- [ ] All code examples use actual code from the codebase with thorough explanations
-- [ ] Diagrams have legends and explanations
-- [ ] Glossary defines domain-specific terminology
-- [ ] Cross-references connect related sections
-- [ ] Document is organized for progressive disclosure of complexity
-- [ ] Multiple reading paths provided for different audiences

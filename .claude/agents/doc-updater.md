@@ -1,7 +1,7 @@
 ---
 name: doc-updater
 description: Documentation and codemap specialist. Use PROACTIVELY for updating codemaps and documentation. Runs /update-codemaps and /update-docs, generates docs/CODEMAPS/*, updates READMEs and guides.
-tools: ["Read", "Write", "Edit", "Bash", "Grep", "Glob"]
+tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
 # Documentation & Codemap Specialist
@@ -102,15 +102,6 @@ Links to other codemaps
 3. **Token Efficiency** — Keep codemaps under 500 lines each
 4. **Actionable** — Include setup commands that actually work
 5. **Cross-reference** — Link related documentation
-
-## Quality Checklist
-
-- [ ] Codemaps generated from actual code
-- [ ] All file paths verified to exist
-- [ ] Code examples compile/run
-- [ ] Links tested
-- [ ] Freshness timestamps updated
-- [ ] No obsolete references
 
 ## When to Update
 

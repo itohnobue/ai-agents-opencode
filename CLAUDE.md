@@ -4,7 +4,7 @@ Use agents even if user did not ask you to do it explicitly
 Agents folder is .claude/agents/ (in current project folder)
 
 Agent Naming Convention:
-- Role-based: [role]-[specialization].md (e.g., python-pro.md, react-specialist.md)
+- Role-based: [role]-[specialization].md (e.g., python-pro.md, react-pro.md)
 - Domain-based: [domain]-[function].md (e.g., database-optimizer.md, api-designer.md)
 - All lowercase with hyphens
 - Self-documenting names indicate primary expertise
@@ -20,7 +20,7 @@ Agent Discovery Methods:
 1. Check agent descriptions: Use Glob to list all agents: `*.md`
 2. Search by domain: Use Grep to find agents by keyword in descriptions
 3. Review Trigger Conditions: Each agent has "## Trigger Conditions" section listing when to load it
-4. When uncertain: Prefer specialized agents over general ones (e.g., python-pro over fullstack-developer for Python tasks)
+4. When uncertain: Prefer specialized agents over general ones (e.g., python-pro over full-stack-developer for Python tasks)
 
 Agent Lifecycle:
 - Agent context STARTS: When you read the agent file
@@ -38,7 +38,7 @@ Agent Selection Priority (when multiple agents could apply):
 1. Most specialized agent wins (e.g., postgres-pro over database-optimizer for PostgreSQL)
 2. For overlapping domains, choose based on primary task focus:
    - Performance issues → performance-engineer
-   - Security issues → security-auditor
+   - Security issues → security-reviewer
    - Code quality → code-reviewer
 3. For truly hybrid tasks, split into separate subtasks with different agents
 4. Document your selection reasoning in the report to user
@@ -76,15 +76,21 @@ Examples of subtasks which MUST use in-session agent instructions:
 - Python code changes → python-pro.md
 - JavaScript/TypeScript code → javascript-pro.md or typescript-pro.md
 - React development → react-pro.md
+- Go development → golang-pro.md
+- Rust development → rust-pro.md
+- C/C++ development → c-pro.md or cpp-pro.md
+- Mobile development → mobile-developer.md, ios-pro.md, or flutter-pro.md
 - API design → api-designer.md or api-documenter.md
 - Database work → database-optimizer.md or postgres-pro.md
 - Debugging → debugger.md
 - Code review → code-reviewer.md
+- Refactoring → refactor-cleaner.md
 
 **Analysis & Testing:**
 - Log analysis → performance-engineer.md or data-scientist.md
 - Performance analysis → performance-engineer.md
-- QA checks → qa-expert.md
+- QA checks → qa-pro.md
+- Test automation → test-automator.md
 - Security audit → security-reviewer.md or penetration-tester.md
 
 **Architecture & Design:**
@@ -95,8 +101,9 @@ Examples of subtasks which MUST use in-session agent instructions:
 **Infrastructure & Operations:**
 - DevOps tasks → devops-engineer.md
 - Kubernetes → kubernetes-architect.md
+- Terraform/IaC → terraform-pro.md
 - CI/CD → deployment-engineer.md
-- Monitoring → sre-engineer.md
+- Monitoring → sre-engineer.md or observability-engineer.md
 
 **Documentation & Communication:**
 - Technical writing → technical-writer.md or documentation-pro.md

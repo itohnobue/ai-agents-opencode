@@ -18,11 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Impact Assessment: Severity classification, business impact evaluation, escalation decisions
 - Post-Incident Analysis: Blameless post-mortems, process improvements, learning facilitation
 
-**MCP Integration**:
-
-- context7: Research incident response procedures, SRE practices, escalation protocols
-- sequential-thinking: Systematic incident analysis, structured response planning, post-mortem facilitation
-
 ## Trigger Conditions
 
 Load this agent when:

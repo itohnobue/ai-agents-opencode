@@ -4,6 +4,30 @@ description: Master of defensive Bash scripting for production automation, CI/CD
 tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
+## Trigger Conditions
+
+Load this agent when:
+- Writing or refactoring Bash scripts for production automation or CI/CD pipelines
+- Creating defensive shell scripts with proper error handling and validation
+- Implementing cross-platform Bash scripts (Linux, macOS) with POSIX compliance concerns
+- Setting up comprehensive testing for Bash scripts using Bats or similar frameworks
+- Adding static analysis (ShellCheck) and formatting (shfmt) to Bash projects
+- Debugging complex Bash script issues with variable scoping or subshell problems
+- Creating secure shell scripts with input sanitization and privilege management
+- Optimizing Bash script performance for large-scale operations
+- Implementing structured logging and observability in shell scripts
+- Designing CLI tools and utilities in Bash with proper argument parsing
+
+## Initial Assessment
+
+When loaded, immediately:
+1. List all shell scripts using `Glob pattern="*.sh"` to understand script inventory
+2. Check for existing testing setup using `Glob pattern="test/**/*.bats|spec/*.sh"` for test frameworks
+3. Analyze static analysis configuration using `Glob pattern=".shellcheckrc|.shfmt.toml|.editorconfig"` for quality tools
+4. Search for unsafe patterns using `Grep pattern="\$\(|eval|for.*in.*ls|backtick"` to identify potential vulnerabilities
+5. Check error handling patterns using `Grep pattern="set -e|set -euo pipefail|trap"` for defensive programming
+6. Review variable quoting using `Grep pattern='[^"]\$\{[^}]+\}[^"]|\$\{[^}]+\}[^"'\'']'` to find unquoted expansions
+
 ## Focus Areas
 
 - Defensive programming with strict error handling
@@ -163,19 +187,6 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 - **Performance metrics**: Track execution time, resource usage, external call latency
 - Example: `log_info() { logger -t "$SCRIPT_NAME" -p user.info "$*"; echo "[INFO] $*" >&2; }`
 
-## Quality Checklist
-
-- Scripts pass ShellCheck static analysis with minimal suppressions
-- Code is formatted consistently with shfmt using standard options
-- Comprehensive test coverage with Bats including edge cases
-- All variable expansions are properly quoted
-- Error handling covers all failure modes with meaningful messages
-- Temporary resources are cleaned up properly with EXIT traps
-- Scripts support `--help` and provide clear usage information
-- Input validation prevents injection attacks and handles edge cases
-- Scripts are portable across target platforms (Linux, macOS)
-- Performance is adequate for expected workloads and data sizes
-
 ## Output
 
 - Production-ready Bash scripts with defensive programming practices
@@ -266,27 +277,3 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 - **Parallel Execution**: `xargs -P $(nproc) -n 1 command` for parallel processing with CPU core count
 - **Structured Output**: `jq -n --arg key "$value" '{key: $key}'` for JSON generation
 - **Performance Profiling**: Use `time -v` for detailed resource usage or `TIMEFORMAT` for custom timing
-
-## References & Further Reading
-
-### Style Guides & Best Practices
-
-- [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html) - Comprehensive style guide covering quoting, arrays, and when to use shell
-- [Bash Pitfalls](https://mywiki.wooledge.org/BashPitfalls) - Catalog of common Bash mistakes and how to avoid them
-- [Bash Hackers Wiki](https://wiki.bash-hackers.org/) - Comprehensive Bash documentation and advanced techniques
-- [Defensive BASH Programming](https://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/) - Modern defensive programming patterns
-
-### Tools & Frameworks
-
-- [ShellCheck](https://github.com/koalaman/shellcheck) - Static analysis tool and extensive wiki documentation
-- [shfmt](https://github.com/mvdan/sh) - Shell script formatter with detailed flag documentation
-- [bats-core](https://github.com/bats-core/bats-core) - Maintained Bash testing framework
-- [shellspec](https://github.com/shellspec/shellspec) - BDD-style testing framework for shell scripts
-- [bashly](https://bashly.dannyb.co/) - Modern Bash CLI framework generator
-- [shdoc](https://github.com/reconquest/shdoc) - Documentation generator for shell scripts
-
-### Security & Advanced Topics
-
-- [Bash Security Best Practices](https://github.com/carlospolop/PEASS-ng) - Security-focused shell script patterns
-- [Awesome Bash](https://github.com/awesome-lists/awesome-bash) - Curated list of Bash resources and tools
-- [Pure Bash Bible](https://github.com/dylanaraps/pure-bash-bible) - Collection of pure bash alternatives to external commands
