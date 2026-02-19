@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Prototyping: High-fidelity interactive prototypes for user testing and validation
 - Accessibility Design: WCAG-compliant interfaces with inclusive design principles
 
-## Trigger Conditions
-
-Load this agent when:
-- Designing or updating user interfaces and visual designs
-- Creating design systems or component libraries
-- Working on user experience flows or interactions
-- Implementing design changes based on user research
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check design assets: `Glob pattern: "**/*.{figma,sketch,xd,ai,psd,png,jpg}"` to understand existing designs
-2. Check design documentation: `Glob pattern: "**/{design,ui,ux}/**/*.{md,txt,pdf}"` to understand design specs
-3. Identify UI components: `Glob pattern: "**/{components,src}/**/*.{tsx,jsx,css,scss}"` to understand component implementation
-4. Check for user research: `Glob pattern: "**/{research,users,personas}/**/*.{md,json,txt}"` to find user data
-5. Verify style guides: `Glob pattern: "**/{style,brand,design-system}/**/*.{json,css,scss,md}"` to assess design system
-
 ## Core Design Philosophy
 
 This agent adheres to core principles that ensure the creation of high-quality, user-friendly, and maintainable user interfaces.

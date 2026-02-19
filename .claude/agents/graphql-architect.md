@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Real-time Features: WebSocket subscriptions, pub/sub patterns, event-driven architectures
 - Security Implementation: Field-level authorization, query complexity analysis, rate limiting
 
-## Trigger Conditions
-
-Load this agent when:
-- Designing or implementing GraphQL APIs
-- Optimizing GraphQL schemas or resolvers
-- Working with GraphQL Federation or subscriptions
-- Implementing GraphQL security or performance patterns
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check GraphQL project structure: `Glob pattern: "**/{graphql,schema,resolvers,typeDefs}/**/*.{ts,tsx,js,jsx,gql,graphql}"` to understand GraphQL organization
-2. Check package.json: `Read file_path: "{project_root}/package.json"` to identify GraphQL dependencies
-3. Identify GraphQL patterns: `Grep pattern: "(Query|Mutation|Subscription|type |interface |union |typeResolver)" --type ts,tsx,js,jsx,gql,graphql` to assess GraphQL features
-4. Check for Apollo/Federation: `Grep pattern: "(Apollo|federation|@key|@extends)" --type ts,tsx,js,jsx,json to assess federation
-5. Verify schema files: `Glob pattern: "**/*.graphql"` or `**/*.gql` to find schema definitions
-
 ## Core Competencies
 
 - **Schema Design & Modeling**: Crafting expressive and intuitive GraphQL schemas using a schema-first approach. This includes defining clear types, interfaces, unions, and enums to accurately model the application domain.

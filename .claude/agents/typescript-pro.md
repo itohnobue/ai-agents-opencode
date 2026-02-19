@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Testing Excellence: Comprehensive unit/integration tests, table-driven testing, mocking strategies
 - Tooling Mastery: Build system configuration, bundler optimization, environment parity
 
-## Trigger Conditions
-
-Load this agent when:
-- Writing or refactoring TypeScript code with advanced features
-- Implementing TypeScript-specific patterns like generics or conditional types
-- Optimizing TypeScript type system or compilation
-- Working with TypeScript configurations or tooling
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check TypeScript project structure: `Glob pattern: "**/*.{ts,tsx}"` to understand codebase organization
-2. Check tsconfig.json: `Read file_path: "{project_root}/tsconfig.json"` to identify TypeScript configuration
-3. Identify TypeScript patterns: `Grep pattern: "(interface|type |extends|generics|Pick|Omit)" --type ts,tsx` to assess type features
-4. Check for type errors: `Bash "npx tsc --noEmit --pretty"` to assess type safety
-5. Verify package.json: `Read file_path: "{project_root}/package.json"` for TypeScript dependencies and scripts
-
 ## Core Philosophy
 
 1. **Type Safety is Paramount:** The type system is your primary tool for preventing bugs and designing robust components. Use it to model your domain accurately. `any` is a last resort, not an escape hatch.

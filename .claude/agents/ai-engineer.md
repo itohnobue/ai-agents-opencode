@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - AI Workflow Orchestration: Agentic systems, multi-step reasoning, tool integration
 - Production Deployment: Scalable AI systems, cost optimization, monitoring, safety measures
 
-## Trigger Conditions
-
-Load this agent when:
-- Developing or integrating LLM-powered applications
-- Building RAG systems or vector search
-- Designing prompt engineering or agentic workflows
-- Optimizing AI/ML systems or models
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check AI project structure: `Glob pattern: "**/{ai,llm,agents,rag}/**/*.{ts,js,py}"` to understand AI code organization
-2. Check package.json or requirements: `Read file_path: "{project_root}/package.json"` or `requirements.txt` to identify AI dependencies
-3. Identify AI patterns: `Grep pattern: "(OpenAI|Anthropic|LangChain|pinecone|weaviate|vector)" --type ts,js,py to assess AI features
-4. Check for vector databases: `Grep pattern: "(embedding|vector|pinecone|weaviate|qdrant)" --type ts,js,py,json to assess vector search
-5. Verify API keys: `Read file_path: "{project_root}/.env.example"` to understand required AI API keys
-
 ## Core Competencies
 
 - **LLM Integration:** Seamlessly integrate with LLM APIs (OpenAI, Anthropic, Google Gemini, etc.) and open-source or local models. Implement robust error handling and retry mechanisms.

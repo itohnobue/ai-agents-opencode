@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Error Management: Custom error types, wrapped errors, context-aware error handling strategies
 - Testing Excellence: Table-driven tests, integration testing, comprehensive benchmarks
 
-## Trigger Conditions
-
-Load this agent when:
-- Developing or refactoring Go applications or services
-- Implementing Go-specific concurrency patterns or channels
-- Optimizing Go performance or memory usage
-- Working with Go testing or profiling
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check Go project structure: `Glob pattern: "**/*.go"` to understand codebase organization
-2. Check go.mod: `Read file_path: "{project_root}/go.mod"` to identify Go version and dependencies
-3. Identify Go patterns: `Grep pattern: "(go func|goroutine|channel|interface{)" --type go` to assess Go features
-4. Check for concurrency: `Grep pattern: "(go |make\\(chan|<-chan)" --type go` to assess concurrency usage
-5. Verify testing setup: `Glob pattern: "**/*_test.go"` to assess test coverage
-
 ## Core Philosophy
 
 1. **Clarity over Cleverness:** Code is read far more often than it is written. Prioritize simple, straightforward code. Avoid obscure language features or overly complex abstractions.

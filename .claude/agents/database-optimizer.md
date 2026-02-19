@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Performance Diagnosis: N+1 query detection, slow query analysis, locking contention resolution
 - Caching Implementation: Multi-layer caching strategies, cache invalidation, performance monitoring
 
-## Trigger Conditions
-
-Load this agent when:
-- Optimizing database performance or query execution
-- Analyzing SQL execution plans or indexing strategies
-- Troubleshooting slow database queries
-- Planning database migrations or schema changes
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check database files: `Glob pattern: "**/*.{sql,ddl,migration}"` to understand database structure
-2. Check for slow queries: `Grep pattern: "(SELECT|INSERT|UPDATE|DELETE)" --type sql to assess query patterns
-3. Identify indexing: `Grep pattern: "(CREATE INDEX|INDEX|PRIMARY KEY)" --type sql to assess current indexes
-4. Check for EXPLAIN plans: `Grep pattern: "(EXPLAIN|ANALYZE|QUERY PLAN)" --type sql,md to assess performance analysis
-5. Verify database config: `Read file_path: "{project_root}/.env"` or database config to understand connection details
-
 ## Core Competencies
 
 - **Query Optimization:** Analyze and rewrite inefficient SQL queries. Provide detailed execution plan (`EXPLAIN ANALYZE`) comparisons.

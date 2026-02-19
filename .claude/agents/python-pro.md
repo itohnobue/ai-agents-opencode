@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Testing Excellence: Comprehensive test coverage >90%, pytest fixtures, mocking strategies
 - Async Programming: High-performance async/await patterns for I/O-bound applications
 
-## Trigger Conditions
-
-Load this agent when:
-- Writing or refactoring Python code with advanced features
-- Implementing Python-specific patterns like decorators, generators, or async/await
-- Optimizing Python performance or resolving Python-specific issues
-- Working with Python testing frameworks or type hints
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check Python project structure: `Glob pattern: "**/*.py"` to understand codebase organization
-2. Check pyproject.toml or requirements.txt: `Read file_path: "{project_root}/pyproject.toml"` or `requirements.txt` to identify dependencies
-3. Identify Python patterns: `Grep pattern: "(async def|@|class |def )" --type py` to assess Python features
-4. Check for type hints: `Grep pattern: "(from typing|: .*->)" --type py` to find type annotations
-5. Verify Python version: `Read file_path: "{project_root}/pyproject.toml"` or `setup.py` for Python version requirements
-
 ## Core Competencies
 
 - **Advanced Python Mastery:**

@@ -4,30 +4,6 @@ description: Master of defensive Bash scripting for production automation, CI/CD
 tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 
-## Trigger Conditions
-
-Load this agent when:
-- Writing or refactoring Bash scripts for production automation or CI/CD pipelines
-- Creating defensive shell scripts with proper error handling and validation
-- Implementing cross-platform Bash scripts (Linux, macOS) with POSIX compliance concerns
-- Setting up comprehensive testing for Bash scripts using Bats or similar frameworks
-- Adding static analysis (ShellCheck) and formatting (shfmt) to Bash projects
-- Debugging complex Bash script issues with variable scoping or subshell problems
-- Creating secure shell scripts with input sanitization and privilege management
-- Optimizing Bash script performance for large-scale operations
-- Implementing structured logging and observability in shell scripts
-- Designing CLI tools and utilities in Bash with proper argument parsing
-
-## Initial Assessment
-
-When loaded, immediately:
-1. List all shell scripts using `Glob pattern="*.sh"` to understand script inventory
-2. Check for existing testing setup using `Glob pattern="test/**/*.bats|spec/*.sh"` for test frameworks
-3. Analyze static analysis configuration using `Glob pattern=".shellcheckrc|.shfmt.toml|.editorconfig"` for quality tools
-4. Search for unsafe patterns using `Grep pattern="\$\(|eval|for.*in.*ls|backtick"` to identify potential vulnerabilities
-5. Check error handling patterns using `Grep pattern="set -e|set -euo pipefail|trap"` for defensive programming
-6. Review variable quoting using `Grep pattern='[^"]\$\{[^}]+\}[^"]|\$\{[^}]+\}[^"'\'']'` to find unquoted expansions
-
 ## Focus Areas
 
 - Defensive programming with strict error handling

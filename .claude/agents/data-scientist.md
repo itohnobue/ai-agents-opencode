@@ -19,23 +19,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Data Pipeline: ETL process design, data quality assurance, automation implementation
 - Collaboration: Cross-functional partnership, stakeholder communication, analytical consulting
 
-## Trigger Conditions
-
-Load this agent when:
-- Analyzing data or generating business insights
-- Writing complex SQL queries or BigQuery optimization
-- Creating statistical analysis or data visualizations
-- Developing data-driven recommendations or dashboards
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check data project structure: `Glob pattern: "**/{analysis,queries,reports,notebooks}/**/*.{sql,py,ipynb}"` to understand data organization
-2. Check for Python data stack: `Grep pattern: "(pandas|numpy|sklearn|matplotlib|seaborn)" --type py` to assess Python data tools
-3. Check for data sources: `Grep pattern: "(FROM|JOIN|WITH)" --type sql` to assess SQL data sources
-4. Identify analysis patterns: `Grep pattern: "(SELECT|WHERE|GROUP BY|HAVING)" --type sql` to assess query complexity
-5. Check for BigQuery: `Grep pattern: "(bq|bigquery|dataset|project)" --type sql,py,sh` to assess BigQuery usage
-
 ## Core Competencies
 
 **1. Deconstruct and Clarify the Request:**

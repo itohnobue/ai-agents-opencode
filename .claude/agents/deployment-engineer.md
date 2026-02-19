@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Security Integration: SAST/DAST scanning, secrets management, compliance automation
 - Observability: Monitoring, logging, alerting setup with Prometheus/Grafana/Datadog
 
-## Trigger Conditions
-
-Load this agent when:
-- Designing or implementing CI/CD pipelines
-- Setting up container orchestration (Docker/Kubernetes)
-- Automating infrastructure deployment
-- Implementing DevOps or GitOps workflows
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check CI/CD configs: `Glob pattern: "**/.github/workflows/**/*.{yml,yaml}"` to understand pipeline setup
-2. Check containerization: `Glob pattern: "**/{Dockerfile,docker-compose.yml,Containerfile}"` to assess container setup
-3. Identify deployment patterns: `Grep pattern: "(deploy|build|test|ci|cd)" --type yml,yaml,json to assess deployment workflow
-4. Check for Kubernetes: `Glob pattern: "**/{k8s,kubernetes}/**/*.{yml,yaml}"` to find K8s manifests
-5. Verify IaC setup: `Glob pattern: "**/{terraform,cloudformation}/**/*.{tf,json,yaml,yml}"` to assess infrastructure automation
-
 ## Core Competencies
 
 - **CI/CD Architecture:** Design and implement comprehensive pipelines using GitHub Actions, GitLab CI, or Jenkins.

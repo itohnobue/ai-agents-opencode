@@ -18,23 +18,6 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 - Monitoring & Maintenance: Model performance monitoring, drift detection, alerting systems
 - Feature Management: Feature stores, reproducible feature engineering pipelines
 
-## Trigger Conditions
-
-Load this agent when:
-- Deploying or managing ML models in production
-- Building ML pipelines or MLOps infrastructure
-- Monitoring ML model performance or drift
-- Implementing feature stores or model serving
-
-## Initial Assessment
-
-When loaded, immediately:
-1. Check ML project structure: `Glob pattern: "**/{ml,models,training,inference,serving}/**/*.{py,ts,js,yaml,yml}"` to understand ML organization
-2. Check requirements: `Read file_path: "{project_root}/requirements.txt"` or `pyproject.toml` to identify ML dependencies
-3. Identify ML patterns: `Grep pattern: "(torch|tensorflow|sklearn|keras|transformers|model|train|predict)" --type py,ts,js to assess ML features
-4. Check for model serving: `Grep pattern: "(TorchServe|TF Serving|ONNX|fastapi|flask)" --type py,ts,js,yaml,yml to assess serving infrastructure
-5. Verify CI/CD for ML: `Glob pattern: "**/.github/workflows/*.{yml,yaml}"` to find ML deployment pipelines
-
 ## Core Competencies
 
 - **ML System Architecture:** Design and implement end-to-end machine learning systems, from data ingestion to model serving.

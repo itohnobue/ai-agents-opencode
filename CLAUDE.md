@@ -3,12 +3,6 @@
 Use agents even if user did not ask you to do it explicitly
 Agents folder is .claude/agents/ (in current project folder)
 
-Agent Naming Convention:
-- Role-based: [role]-[specialization].md (e.g., python-pro.md, react-pro.md)
-- Domain-based: [domain]-[function].md (e.g., database-optimizer.md, api-designer.md)
-- All lowercase with hyphens
-- Self-documenting names indicate primary expertise
-
 IMPORTANT: Before starting any subtask you MUST select the best agent and apply it
 Always use agents for: code writing, analysis, design, debugging, testing, documentation
 DO NOT use the Task tool to spawn subprocess agents - always use in-session agent loading instead.
@@ -19,20 +13,13 @@ Do NOT carry over agent-specific patterns, checklists, or conventions to unrelat
 Agent Discovery Methods:
 1. Check agent descriptions: Use Glob to list all agents: `*.md`
 2. Search by domain: Use Grep to find agents by keyword in descriptions
-3. Review Trigger Conditions: Each agent has "## Trigger Conditions" section listing when to load it
-4. When uncertain: Prefer specialized agents over general ones (e.g., python-pro over full-stack-developer for Python tasks)
-
-Agent Lifecycle:
-- Agent context STARTS: When you read the agent file
-- Agent context ACTIVE: During the specific subtask only
-- Agent context ENDS: When subtask completes or you start reading a different agent
-- Context isolation: Do NOT mix patterns from multiple agents in the same subtask
+3. When uncertain: Prefer specialized agents over general ones (e.g., python-pro over full-stack-developer for Python tasks)
 
 User request execution workflow MUST be like this:
 1. Check available agents in agents folder
 2. Parse the user request and list ALL implied subtasks
 3. Map each subtask to the best agent
-4. Report to user: "I identified these subtasks: [list] and will use these agents: [list]"
+4. For multi-step tasks, report to user: "I identified these subtasks: [list] and will use these agents: [list]"
 
 Agent Selection Priority (when multiple agents could apply):
 1. Most specialized agent wins (e.g., postgres-pro over database-optimizer for PostgreSQL)
@@ -45,66 +32,15 @@ Agent Selection Priority (when multiple agents could apply):
 
 Subtask execution workflow MUST be like this:
 1. Read the appropriate agent markdown file from agents folder using the Read tool (always fresh re-read)
-   - Review "## Trigger Conditions" to confirm agent is appropriate
-   - Follow "## Initial Assessment" steps immediately after loading
-2. Apply those instructions to the CURRENT SUBTASK ONLY
-3. COMPLETE the agent-guided work fully before proceeding
-4. VERIFY work meets agent's quality standards and checklists
-5. Save report for current subtask (you can use temporary folder if needed)
-6. DISCARD the agent instructions - do not apply them to subsequent subtasks and return to default behavior
-7. Proceed with next subtask using the same workflow
-8. Once all subtasks are finished, compose all reports into one full report
+2. Apply agent instructions to the CURRENT SUBTASK ONLY, complete fully, verify quality
+3. DISCARD agent instructions — do not carry over to next subtask
+4. Proceed with next subtask; once all finished, compose reports into one full report
 
 Subtask Report Format:
-Each subtask report should include:
 1. Agent used: [agent-name]
 2. Task description: [what was done]
 3. Key findings/results: [bulleted list]
-4. Quality verification: [checklist items verified]
-5. Files modified: [list of changed files]
-6. Next steps/recommendations: [if applicable]
+4. Files modified: [list of changed files]
+5. Next steps/recommendations: [if applicable]
 
-Error Handling:
-- If no suitable agent exists: Proceed with default behavior and document why no agent was selected
-- If agent instructions conflict with task: Adapt agent guidance to task context, prioritize user's explicit requirements
-- If agent work fails quality check: Re-attempt with same agent or try related agent
-- If subtask scope changes mid-execution: Re-evaluate agent selection and reload if needed
-
-Examples of subtasks which MUST use in-session agent instructions:
-
-**Development & Code:**
-- Python code changes → python-pro.md
-- JavaScript/TypeScript code → javascript-pro.md or typescript-pro.md
-- React development → react-pro.md
-- Go development → golang-pro.md
-- Rust development → rust-pro.md
-- C/C++ development → c-pro.md or cpp-pro.md
-- Mobile development → mobile-developer.md, ios-pro.md, or flutter-pro.md
-- API design → api-designer.md or api-documenter.md
-- Database work → database-optimizer.md or postgres-pro.md
-- Debugging → debugger.md
-- Code review → code-reviewer.md
-- Refactoring → refactor-cleaner.md
-
-**Analysis & Testing:**
-- Log analysis → performance-engineer.md or data-scientist.md
-- Performance analysis → performance-engineer.md
-- QA checks → qa-pro.md
-- Test automation → test-automator.md
-- Security audit → security-reviewer.md or penetration-tester.md
-
-**Architecture & Design:**
-- System design → cloud-architect.md or microservices-architect.md
-- UI/UX design → ui-designer.md or ux-designer.md
-- Data modeling → data-engineer.md
-
-**Infrastructure & Operations:**
-- DevOps tasks → devops-engineer.md
-- Kubernetes → kubernetes-architect.md
-- Terraform/IaC → terraform-pro.md
-- CI/CD → deployment-engineer.md
-- Monitoring → sre-engineer.md or observability-engineer.md
-
-**Documentation & Communication:**
-- Technical writing → technical-writer.md or documentation-pro.md
-- API documentation → api-documenter.md
+Agent instructions MUST be used for: code writing, analysis, design, debugging, testing, documentation, infrastructure, architecture. Use Glob/Grep on agents folder to find the best match by domain.
