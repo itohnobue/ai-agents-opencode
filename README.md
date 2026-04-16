@@ -1,12 +1,12 @@
 # AI Agents
 
-108 specialized agents for Claude Code. Built through extensive research (Oparin n=600 evaluation, scientific literature on LLM prompting, A/B testing with 6 agent variants) and manual quality review of every agent file.
+108 specialized agents for OpenCode. Built through extensive research (Oparin n=600 evaluation, scientific literature on LLM prompting, A/B testing with 6 agent variants) and manual quality review of every agent file.
 
 ## Quick Start
 
-1. **Copy files**: Put `.claude/` folder into your Claude Code working directory
-2. **Add instructions**: Copy `CLAUDE.md` contents into your project's instruction file
-3. **Done**: Claude automatically selects the right agent for each task
+1. **Copy files**: Put `.opencode/` folder into your OpenCode working directory
+2. **Add instructions**: Copy `AGENTS.md` contents into your project's instruction file
+3. **Done**: Agents are auto-discovered from `.opencode/agents/`. Invoke with `@agent-name`
 
 ## Design Philosophy
 
@@ -57,8 +57,8 @@ Every agent was manually reviewed with full reads of all available sources. No a
 - **Research-Optimized**: Structure validated against n=600 evaluation data
 - **Decision Tables**: Every agent encodes when-to-choose-what guidance
 - **Anti-Patterns**: Prevent known failure modes specific to each domain
-- **In-Session Loading**: Designed for direct context injection, not subprocess spawning
-- **Zero Dependencies**: Pure markdown files
+- **Auto-Discovered**: OpenCode automatically discovers agents from `.opencode/agents/`
+- **Zero Dependencies**: Pure markdown files with YAML frontmatter
 
 ## License
 
