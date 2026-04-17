@@ -1,4 +1,4 @@
-# Agent Directory (108 agents)
+# Agent Directory (109 agents)
 
 Quick reference for agent selection. Pick the MOST specialized agent for the task — domain-specific checklists and anti-patterns only work when the agent matches the domain.
 
@@ -168,4 +168,5 @@ Quick reference for agent selection. Pick the MOST specialized agent for the tas
 | refactor-cleaner.md | Refactor/cleanup | Dead code removal, consolidation |
 | research-analyst.md | Research analyst | Structured research, source evaluation |
 | websocket-engineer.md | WebSocket engineer | Real-time messaging, Socket.IO |
+| web-searcher.md | Web researcher | Internet search + synthesis |
 | agent-organizer.md | Agent orchestrator | Multi-agent task delegation |
