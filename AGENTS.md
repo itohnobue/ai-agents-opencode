@@ -4,7 +4,7 @@
 
 **Using Agents:** Agents are automatically discovered. Invoke any agent with `@agent-name` in your message. Example: `@python-pro optimize this function`.
 
-**Discovery:** Consult `INDEX.md` at repo root for the full categorized agent directory (108 agents grouped by domain). Pick the MOST specialized agent — domain-specific checklists and anti-patterns only work when the agent matches the domain.
+**Discovery:** Do FULL read of `.opencode/agents/INDEX.md` for the full categorized agent directory (108 agents grouped by domain). Pick the MOST specialized agent — domain-specific checklists and anti-patterns only work when the agent matches the domain.
 
 ### Agent Categories
 
