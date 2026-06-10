@@ -15,9 +15,10 @@ Generic AI assistants produce mediocre results on specialized work. A domain-spe
 ```bash
 git clone https://github.com/itohnobue/ai-agents-opencode
 cp -R ai-agents-opencode/.opencode /path/to/your/project/
+cp ai-agents-opencode/AGENTS.md /path/to/your/project/
 ```
 
-Agents in `.opencode/agents/` are auto-discovered by OpenCode. Browse `.opencode/agents/INDEX.md` for the full categorized directory.
+If you already have an `AGENTS.md`, append this one instead of overwriting. Agents in `.opencode/agents/` are auto-discovered. Browse `.opencode/agents/INDEX.md` for the full categorized directory.
 
 ## What's included
 
